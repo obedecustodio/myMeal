@@ -1,0 +1,64 @@
+
+
+#img{
+  /* width: px; */
+  /* height: 350px; */
+  background: #ffff;
+}
+
+
+
+#btn{
+  width: 100px;
+  height: 100px;
+}
+#icon{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  color: black;
+}
+
+.card-img-top{
+  /* width: 350px; */
+  height: 300px;
+}
+
+#p{
+  display: block;
+  position: fixed;
+  background: white;
+  color: black;
+}
+
+#form{
+  width: 500px;
+  padding: 20px;
+  margin-bottom: 115px;
+}
+
+
+#formSign{
+  width: 500px;
+}
+
+#error{
+  height: 500px;
+}
+
+#link{
+  text-decoration: none;
+}
+
+#nav{
+  width: 100%;
+}
+
+#logo{
+  width: 30px;
+}
+
+#contacts{
+  margin-left: 30px;
+}
+
