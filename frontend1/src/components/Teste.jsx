@@ -29,7 +29,7 @@ export const Teste = () => {
         userId: userId
     })
 
-    const aumentar = (id,quant) => {
+    const aumentar = (id, quant) => {
         setData(prev => {
             const updated = prev.map((item) => {
                 if (item.id === id) {
@@ -103,11 +103,11 @@ export const Teste = () => {
                 <div className="col-3">Preco</div>
                 <div className="col-3"></div>
             </div>
-                    {data.map((item, index) => (
-                        <div className='row alert alert-warning' key={item.id}>
-                            <Item item={item} remover={remover} diminuir={diminuir} aumentar={aumentar}/>
-                        </div>
-                    ))}
+            {data.map((item, index) => (
+                <div className='row alert alert-warning' key={item.id}>
+                    <Item item={item} remover={remover} diminuir={diminuir} aumentar={aumentar} />
+                </div>
+            ))}
             <div className="alert alert-warning text-center">
                 <h3>Total: {price},00 MZN</h3>
                 <button className='btn btn-success' onClick={send}>Comprar</button>

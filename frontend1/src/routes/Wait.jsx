@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Outro from '../components/Outro'
 
 export const Wait = () => {
     const token = localStorage.getItem('token');
@@ -60,55 +61,24 @@ export const Wait = () => {
 
 
     return (
-        <div className='container-fluid'>
+        <div className='container'>
             <div className="col-12">
                 <h1 className='text-warning text-center p-5'>Pedidos</h1>
             </div>
-            <table className="table table-warning table-borderless">
-                <thead>
-                    <tr>
-                        <td><h3>Item</h3></td>
-                        <td><h3>Preco</h3></td>
-                        <td><h3>Propetario</h3></td>
-                        <td><h3>Estado</h3></td>
-                    </tr>
-                </thead>
-                <tbody className='p3'>
 
-
-
+            <div className="row alert alert-primary">
+                <div className="col-3">Item</div>
+                <div className="col-3">Preco</div>
+                <div className="col-3">Propretario</div>
+                <div className="col-3">Estado</div>
+            </div>
+            
                     {data.map((data) => (
+
                         
-                        userId == data.user_id ? (
-                            <tr key={data.id}>
-
-                                <td className='p-1'>{data.items}</td>
-                                <td className='p-1'>
-
-                                    {data.price},00 MZN
-                                </td>
-                                <td className='p-1'>{data.owner}</td>
-                                <td className='p-1'>
-                                    <p className={
-                                        data.status === 'new' ? "alert alert-primary d-flex justify-content-between"
-                                            : data.status === 'preparando' ? "alert alert-secondary d-flex justify-content-between"
-                                                : data.status === 'pronto' ? "alert alert-info d-flex justify-content-between"
-                                                    : data.status === 'entregue' ? "alert alert-success d-flex justify-content-between" : ''}>
-                                        {data.status}
-                                        {data.status !== 'pronto' ? <button className='btn btn-danger' onClick={() => remove(data.id)}><FontAwesomeIcon icon="fa-solid fa-trash" /></button> : ''}
-
-                                    </p>
-
-
-
-                                </td>
-                            </tr>
-                        ) : ''
+                        
+                       <Outro data = {data}/>
                     ))}
-
-
-                </tbody>
-            </table>
         </div>
     )
 }
