@@ -1,6 +1,5 @@
 import $ from 'jquery'
 import React, { useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Outro from '../components/Outro'
 
 export const Wait = () => {
@@ -55,8 +54,6 @@ export const Wait = () => {
         });
     }
 
-
-
     const [data, setData] = useState([])
 
 
@@ -74,10 +71,7 @@ export const Wait = () => {
             </div>
             
                     {data.map((data) => (
-
-                        
-                        
-                       <Outro data = {data}/>
+                        userId == data.user_id && <Outro data = {data}/>
                     ))}
         </div>
     )
