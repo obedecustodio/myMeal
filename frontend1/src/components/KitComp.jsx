@@ -2,12 +2,15 @@ import $ from 'jquery'
 import Pedido from './Pedido';
 import React, { useState, useEffect } from 'react'
 
-export const KitComp = () => {
+export const KitComp = ({status}) => {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
         get()
     }, [])
+    useEffect(() => {
+        get()
+    }, [change])
 
     const get = async () => {
         await $.ajax({
@@ -33,8 +36,16 @@ export const KitComp = () => {
         });
     }
 
+    function change(){
+
+    }
 
     const [data, setData] = useState([])
+    const pending = data.filter(data => data.status === 'preparando').length
+    const novo = data.filter(data => data.status === 'new').length
+    const entregue = data.filter(data => data.status === 'entregue').length
+    const ready = data.filter(data => data.status === 'pronto').length
+    const all = data.length
 
 
     return (
@@ -54,28 +65,33 @@ export const KitComp = () => {
                 </div>
                 
                     {data.map((data) => (
+                        data.status === status &&
                         <div className="row alert alert-warning" key={data.id}>
-                            <Pedido data={data}/>
+                            <Pedido data={data} change={change}/>
                         </div>
                     ))}
 
             </div>
             <div className="row alert alert-warning">
+                <div className='col-2'>
+                    <h4>Pedidos novos: </h4>
+                    <p>{novo}</p>
+                </div>
                 <div className='col-3'>
                     <h4>Pedidos pendentes: </h4>
-                    <p>10</p>
+                    <p>{pending}</p>
                 </div>
                 <div className='col-3'>
                     <h4>Pedidos entregues: </h4>
-                    <p>10</p>
+                    <p>{entregue}</p>
                 </div>
-                <div className='col-3'>
+                <div className='col-2'>
                     <h4>Pedidos prontos: </h4>
-                    <p>10</p>
+                    <p>{ready}</p>
                 </div>
-                <div className='col-3'>
+                <div className='col-2'>
                     <h4>Total de Pedidos: </h4>
-                    <p>10</p>
+                    <p>{all}</p>
                 </div>
             </div>
         </div>

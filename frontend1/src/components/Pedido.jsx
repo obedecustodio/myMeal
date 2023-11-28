@@ -2,7 +2,7 @@ import React from 'react'
 import Select from 'react-select';
 import { useState } from 'react';
 
-export default function Pedido({data}) {
+export default function Pedido({data, change}) {
     const token = localStorage.getItem('token');
     const [selectedValue, setSelectedValue] = useState()
     const Options = [
@@ -28,7 +28,10 @@ export default function Pedido({data}) {
                 <div className="col-3">{data.items}</div>
                 <div className="col-3">{data.price}</div>
                 <div className="col-3">{data.owner}</div>
-                <div className="col-3"> <Select onChange={(selectedOption) => handleSelectChange(selectedOption, data.id)}
+                <div className="col-3"> <Select onChange={(selectedOption) => {
+                handleSelectChange(selectedOption, data.id);
+                    change()
+                 } }
 
                     options={Options}
                     value={selectedValue}

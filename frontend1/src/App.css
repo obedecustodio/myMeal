@@ -62,3 +62,30 @@
   margin-left: 30px;
 }
 
+.second-navbar {
+  background-color: #dbdbdb; /* Bootstrap warning color */
+  color: rgb(255, 255, 255); /* Adjust text color for better visibility */
+  padding: 8px;
+}
+
+.second-navbar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+}
+
+.second-navbar li {
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.second-navbar li:hover {
+  color: #181717; /* Change text color on hover */
+}
+
+.second-navbar li.active {
+  font-weight: bold; /* Style the active link */
+  color: #333; /* Adjust text color for active link */
+}

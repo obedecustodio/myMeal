@@ -15,7 +15,7 @@ export const Welcome = () => {
                     <h1 className='text-warning'>myMeal</h1>
 
                     <h3>Experimente a melhor comida </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sed delectus autem nobis sint repudiandae, quam qui. Modi exercitationem expedita reiciendis maiores quisquam, quasi ullam atque placeat quod quam libero.</p>
+                    <p>Explore sabores excepcionais em cada prato no <strong>myMeal</strong>. Da tradição à inovação, nossa cozinha oferece uma experiência culinária única, preparada com ingredientes frescos e paixão. Faça parte dessa jornada gastronômica e descubra o que torna nossos pratos tão irresistíveis.</p>
                     <Link to="/menu" className='btn btn-warning'>Ver Menu</Link>
 
                 </div>
