@@ -35,7 +35,6 @@ export const Login = () => {
                     'Content-Type': 'application/json'
                 },
                 success: (data) => {
-                    // console.log('Data sent and received:', data);
                     console.log(data.user)
                     localStorage.setItem('isAuthE', 'true');
                     localStorage.setItem('token', data.token);
@@ -99,14 +98,11 @@ export const Login = () => {
                     </div>
                 </div>
                 {
-                    err == 1 ?
-                        (
-                            <div className="alert alert-danger">
-                                <p className='text-danger'>{message}</p>
-                            </div>
-                        )
-                        :
-                        ''
+                   err == 1  && (
+                    <div className="alert alert-danger">
+                        <p className='text-danger'>{message}</p>
+                    </div>
+                )
                 }
                 <div className='text-center'>
                     <button type="submit" className="btn btn-warning" onClick={handleSubmit}>Login</button>

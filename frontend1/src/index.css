@@ -1,0 +1,40 @@
+.magic-nav{
+    position: relative;
+    
+    overflow: hidden;
+}
+.magic-nav::after{
+    height:3px;
+    width: 100%;
+    background-color: #ffc107;
+    border-radius: 50px;
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    left: 0px;
+    translate: -100%;
+    transform-origin: left;
+    transition: 250ms all;
+}
+.selected-nav::before{
+    height: 3px;
+    width: 100%;
+    background-color: #ffc107;
+    border-radius: 50px;
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    left: 0px;
+    transform-origin: left;
+    transition: 250ms all;
+}
+.magic-nav:hover:after{
+    translate: 0%;
+}
+.button-reset{
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 18px;
+    color: #ffc107;
+}

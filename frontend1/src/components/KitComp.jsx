@@ -8,9 +8,9 @@ export const KitComp = ({status}) => {
     useEffect(() => {
         get()
     }, [])
-    useEffect(() => {
-        get()
-    }, [change])
+    // useEffect(() => {
+    //     get()
+    // }, [change])
 
     const get = async () => {
         await $.ajax({

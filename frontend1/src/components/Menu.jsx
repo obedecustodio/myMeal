@@ -15,7 +15,7 @@ import bg3 from '../assets/images/burguerCompleto.jpg'
 import background from '../assets/images/background.jpg'
 import bg2 from '../assets/images/burguerSimplesBatatas.jpg'
 import bg4 from '../assets/images/burguerCompletoBatatas.jpg'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Menu = () => {
     const [pedido, setPedido] = useState([]);
@@ -45,7 +45,7 @@ export const Menu = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h1 className='text-warning text-center p-5'>Menu</h1>
+                        <h1 className='text-warning text-center p-5'><FontAwesomeIcon icon="fa-solid fa-burger" beat /> Menu</h1>
                     </div>
                 </div>
                 <div className="row">

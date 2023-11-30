@@ -54,6 +54,10 @@
   width: 100%;
 }
 
+#navLink{
+  font-size: 20px;
+}
+
 #logo{
   width: 30px;
 }
@@ -63,8 +67,8 @@
 }
 
 .second-navbar {
-  background-color: #dbdbdb; /* Bootstrap warning color */
-  color: rgb(255, 255, 255); /* Adjust text color for better visibility */
+  background-color: #f0f0f0; 
+  color: rgb(255, 255, 255); 
   padding: 8px;
 }
 
@@ -81,11 +85,3 @@
   font-size: 14px;
 }
 
-.second-navbar li:hover {
-  color: #181717; /* Change text color on hover */
-}
-
-.second-navbar li.active {
-  font-weight: bold; /* Style the active link */
-  color: #333; /* Adjust text color for active link */
-}

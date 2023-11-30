@@ -1,4 +1,5 @@
 import './App.css'
+import "./index.css"
 import { Kit } from './routes/Kit.jsx'
 import { Home } from './routes/Home.jsx'
 import { Wait } from './routes/Wait.jsx'

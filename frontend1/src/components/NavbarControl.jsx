@@ -1,23 +1,26 @@
+import { useSearchParams } from 'react-router-dom'
 import '../App.css'
 import React, { useEffect, useState } from 'react'
 
 
+
 export const NavbarControl = ({setPedidos}) => {
-   
+   const [searchParams, setSearchParams] = useSearchParams()
+   const status = searchParams.get("status")
     return (
         <nav className="second-navbar">
         <ul>
-          <li>
-            <button className='btn btn-warning' onClick={() => setPedidos(p => "new")}>Novos</button>
+          <li className={`magic-nav ${status === "new" && "selected-nav"}`}>
+            <button className={`button-reset  `} onClick={() => setPedidos("new")}>Novos</button>
           </li>
-          <li>
-            <button className='btn btn-warning' onClick={() => setPedidos(p => "preparando")}>Preparando</button>
+          <li className={`magic-nav ${status === "preparando" && "selected-nav"}`}>
+            <button className={`button-reset `} onClick={() => setPedidos("preparando")}>Preparando</button>
           </li>
-          <li>
-            <button className='btn btn-warning' onClick={() => setPedidos(p => "pronto")}>Prontos</button>
+          <li className={`magic-nav ${status === "pronto" && "selected-nav"}`}>
+            <button className={`button-reset `} onClick={() => setPedidos("pronto")}>Prontos</button>
           </li>
-          <li>
-            <button className='btn btn-warning' onClick={() => setPedidos(p => "entregue")}>Entregues</button>
+          <li className={`magic-nav ${status === "entregue" && "selected-nav"}`}>
+            <button className={`button-reset `} onClick={() => setPedidos("entregue")}>Entregues</button>
           </li>
           
         </ul>
